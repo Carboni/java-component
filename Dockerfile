@@ -5,7 +5,7 @@ from java:7
 RUN \
   apt-get clean && \
   apt-get update && \
-  apt-get install -y git maven 
+  apt-get install -y git maven
 
 # Consul agent - /usr/local/bin
 
@@ -21,6 +21,7 @@ EXPOSE 8080
 
 # Build the base entry point script
 
+WORKDIR /usr/entrypoint
 RUN echo "#!/bin/bash" >> container.sh
 # Disabled for now: RUN echo "consul agent -data-dir /tmp/consul -config-dir /etc/consul.d -join=dockerhost &" > container.sh
 RUN chmod u+x container.sh
