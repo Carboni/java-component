@@ -9,6 +9,12 @@ This base image therefore provides those common steps so you can run with `--no-
 ## Example component Dockerfile
 
 ```
+# Consul check
+
+WORKDIR /etc/consul.d
+RUN echo '{"service": {"name": "my-component", "port": 8080, "check": {"script": "curl http://localhost:8080 >/dev/null 2>&1", "interval": "10s"}}}' > my-component.json
+
+
 # Check out code from Github
 
 
