@@ -14,20 +14,16 @@ This base image therefore provides those common steps so you can run with `--no-
 WORKDIR /etc/consul.d
 RUN echo '{"service": {"name": "my-component", "port": 8080, "check": {"script": "curl http://localhost:8080 >/dev/null 2>&1", "interval": "10s"}}}' > my-component.json
 
-
 # Check out code from Github
-
 
 WORKDIR /usr/src
 RUN git clone https://github.com/username/my-repo.git .
 # Select branch
 RUN git checkout release
 
-
 # Build the component
 
 RUN mvn install -DskipTests
-
 
 # Add command to the entry point script
 
