@@ -7,6 +7,9 @@ RUN \
   apt-get update && \
   apt-get install -y git maven
 
+# Maven repository
+ADD ~/.m2/repository /root/.m2/repository
+
 # Consul agent - /usr/local/bin
 
 ADD https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip /tmp/0.5.2_linux_amd64.zip
