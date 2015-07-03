@@ -8,7 +8,9 @@ RUN \
   apt-get install -y git maven
 
 # Maven repository
-ADD ~/.m2/repository /root/.m2/repository
+#This doesn't work - it gives the folowing error: "~/.m2/repository: no such file or directory".
+#Absolute path doesn't seem to work either.
+#ADD ~/.m2/repository /root/.m2/repository
 
 # Consul agent - /usr/local/bin
 
