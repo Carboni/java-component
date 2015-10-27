@@ -1,4 +1,4 @@
-from java:7
+from java:8
 
 # Install git and maven
 
